@@ -9,9 +9,14 @@ public class BgController {
 
     @RequestMapping("/home")
     String home(Model model) {
-        model.addAttribute("name", "Hello welcome tto website");
 
         return "page.html";
     }
 
+    @RequestMapping("/upload")
+    String upload(Model model) {
+
+
+        return "upload.html";
+    }
 }

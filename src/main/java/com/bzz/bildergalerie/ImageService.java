@@ -1,0 +1,30 @@
+package com.bzz.bildergalerie;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+import org.springframework.web.multipart.MultipartFile;
+
+import java.io.IOException;
+import java.io.InputStream;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
+import java.nio.file.StandardCopyOption;
+import java.util.Base64;
+
+@Service
+public class ImageService {
+    @Autowired
+    private ImageRepository repository;
+
+    public void uploadImage(MultipartFile image) {
+
+        //Image newImage = new Image((int) repository.count() + 1, image.getOriginalFilename(), Base64.getEncoder().encodeToString(image.getBytes()));
+        try {
+            Image newImage = new Image((int) repository.count() + 1, image.getOriginalFilename(), image.getBytes());
+            repository.save(newImage);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+}

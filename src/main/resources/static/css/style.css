@@ -2,6 +2,23 @@ body {
     font-family: 'Titillium Web', sans-serif !important;
 }
 
+/* IMAGE GALLERY */
+.image-gallery {
+
+}
+
+img {
+    object-fit: cover;
+}
+
+.btn-group {
+    position: relative;
+    display: inline-flex;
+    vertical-align: middle;
+    border: 1px #777777 solid;
+    border-radius: 5px;
+}
+
 /* SPACING */
 .jumbotron {
     margin-bottom: 0;
@@ -107,21 +124,21 @@ body,
     height: 100%;
 }
 .item:nth-child(1) {
-    background: url('https://dice-media.imgix.net/attachments/2021-06-30/51428641-d776-4582-9833-acf4792e6d24.jpg?rect=0%2C495%2C2000%2C2000');
+    background: url('../img/brent_faiyaz_featured.jpg');
     background-size: cover;
     background-position: center center;
     background-repeat: no-repeat;
 }
 
 .item:nth-child(2) {
-    background: url('https://images.complex.com/complex/images/c_fill,dpr_auto,f_auto,q_auto,w_1400/fl_lossy,pg_1/eys5ntxw6zjcxijbdznf/yeat-what-you-need-to-know?fimg-ssr-default');
+    background: url('../img/yeat_featured.jpg');
     background-size: cover;
     background-position: center center;
     background-repeat: no-repeat;
 }
 
 .item:nth-child(3) {
-    background: url('https://i.pinimg.com/originals/d2/be/81/d2be811a4cdbd2d0f1322e82622f660a.jpg');
+    background: url('../img/young_thug_featured.jpg');
     background-size: cover;
     background-position: center center;
     background-repeat: no-repeat;

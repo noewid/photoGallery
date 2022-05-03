@@ -8,6 +8,24 @@
     <link href='https://fonts.googleapis.com/css?family=Lato' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
     <link rel="stylesheet" href="css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Titillium+Web:wght@300&display=swap" rel="stylesheet">
+    <style>
+        .bd-placeholder-img {
+            font-size: 1.125rem;
+            text-anchor: middle;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            user-select: none;
+        }
+
+        @media (min-width: 768px) {
+            .bd-placeholder-img-lg {
+                font-size: 3.5rem;
+            }
+        }
+    </style>
 </head>
 <body>
 <!-- NAVIGATION -->
@@ -25,11 +43,104 @@
     </div>
 </nav>
 <!-- UPLOAD -->
-<h1>Upload images here!</h1>
-<p>Upload:</p>
+<section class="jumbotron text-center">
+    <div class="container">
+        <h1>Community Image Gallery</h1>
+        <p>This is a place for you to share you favorite music related images and have them displayed in this gallery!</p>
+        <form enctype="multipart/form-data" id="uploadImage" action="uploadImage" method="post">
+            <label for="image">Upload: </label><input type="file" name="image" id="image" accept="image/*" th:onchange="submit()">
+        </form>
+    </div>
+</section>
+<div class="image-gallery py-5 bg-light">
+    <div class="container">
+        <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
+            <div class="col">
+                <div class="card shadow-sm">
+                    <img src="https://images.complex.com/complex/images/c_crop,h_1079,w_1853,x_0,y_0/c_fill,dpr_auto,f_auto,q_auto,w_1400/fl_lossy,pg_1/epdpgf8hzri7xbkcr3pr/lil-uzi-vert-playboi-carti-getty-bennett-raglin2?fimg-ssr-default" class="card-img-top" width="100%" height="225" preserveAspectRatio="xMidYMid slice" focusable="false">
+
+                    <div class="card-body">
+                        <p class="card-text">Plaiboiy catri & litgle uzzi</p>
+                        <div class="d-flex justify-content-between align-items-center">
+                            <div class="btn-group">
+                                <button disabled type="button" class="btn btn-sm btn-secondary">Delete</button>
+                                <button type="button" class="btn btn-sm btn-outline-secondary">Info</button>
+                            </div>
+                            <small class="text-muted">playboicarti</small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card shadow-sm">
+                    <img src="https://www.the-sun.com/wp-content/uploads/sites/6/2022/02/SC-Yeat-Comp-copy-2.jpg" class="card-img-top" width="100%" height="225" preserveAspectRatio="xMidYMid slice" focusable="false">
+
+                    <div class="card-body">
+                        <p class="card-text">Yeast</p>
+                        <div class="d-flex justify-content-between align-items-center">
+                            <div class="btn-group">
+                                <button disabled type="button" class="btn btn-sm btn-secondary">Delete</button>
+                                <button type="button" class="btn btn-sm btn-outline-secondary">Info</button>
+                            </div>
+                            <small class="text-muted">playboicarti</small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card shadow-sm">
+                    <img src="https://i.guim.co.uk/img/media/0276bb34642296fe1191813620398186cb1abe10/0_413_2667_1600/master/2667.jpg?width=1200&height=1200&quality=85&auto=format&fit=crop&s=9597170601ff3d53d31477253f237b19" class="card-img-top" width="100%" height="225" preserveAspectRatio="xMidYMid slice" focusable="false">
+
+                    <div class="card-body">
+                        <p class="card-text">Shéyaa Bin Abraham-Joseph</p>
+                        <div class="d-flex justify-content-between align-items-center">
+                            <div class="btn-group">
+                                <button disabled type="button" class="btn btn-sm btn-secondary">Delete</button>
+                                <button type="button" class="btn btn-sm btn-outline-secondary">Info</button>
+                            </div>
+                            <small class="text-muted">playboicarti</small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card shadow-sm">
+                    <img src="https://i1.sndcdn.com/artworks-EUrZswbnzm6Se8SY-1Ftqug-t500x500.jpg" class="card-img-top" width="100%" height="225" preserveAspectRatio="xMidYMid slice" focusable="false">
+
+                    <div class="card-body">
+                        <p class="card-text">OMG YEAP TREAK</p>
+                        <div class="d-flex justify-content-between align-items-center">
+                            <div class="btn-group">
+                                <button disabled type="button" class="btn btn-sm btn-secondary">Delete</button>
+                                <button type="button" class="btn btn-sm btn-outline-secondary">Info</button>
+                            </div>
+                            <small class="text-muted">playboicarti</small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card shadow-sm">
+                    <img src="https://thefader-res.cloudinary.com/private_images/w_760,c_limit,f_auto,q_auto:best/GettyImages-1363237965_ljib1t/gunna-photo-by-alberto-e-rodriguez-getty-images-for-ds4ever-presented-by-gunna-young-stoner-life-records-300-entertainment.jpg" class="card-img-top" width="100%" height="225" preserveAspectRatio="xMidYMid slice" focusable="false">
+
+                    <div class="card-body">
+                        <p class="card-text">Guner (mcdonald ad)</p>
+                        <div class="d-flex justify-content-between align-items-center">
+                            <div class="btn-group">
+                                <button disabled type="button" class="btn btn-sm btn-secondary">Delete</button>
+                                <button type="button" class="btn btn-sm btn-outline-secondary">Info</button>
+                            </div>
+                            <small class="text-muted">playboicarti</small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
 
 <!-- FOOTER -->
-<footer class="blog-footer" style="margin-top: 20px">
+<footer class="blog-footer">
     <p>Website built by Noé Widmer and Dean Roth</p>
     <p>
         <a href="home">Back to home</a>

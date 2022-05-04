@@ -5,8 +5,8 @@
     <link rel="icon" type="image/x-icon" href="https://assets.webiconspng.com/uploads/2017/02/Music-Player-Modern-Icon.png">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
           integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
-    <link href='https://fonts.googleapis.com/css?family=Lato' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <link href='https://fonts.googleapis.com/css?family=Lato' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" href="css/style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -27,7 +27,7 @@
         }
     </style>
 </head>
-<body>
+<body onload="populateImages()">
 <!-- NAVIGATION -->
 <nav class="navbar sticky-top navbar-expand-lg navbar-light bg-light">
     <a class="navbar-brand" href="home">Music gallery</a>
@@ -36,9 +36,8 @@
     </button>
     <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
         <div class="navbar-nav">
-            <a class="nav-item nav-link active" href="home">Home <span class="sr-only">(current)</span></a>
-            <a class="nav-item nav-link" href="upload">Upload Images</a>
-            <a class="nav-item nav-link disabled" href="#">Coming soon...</a>
+            <a class="nav-item nav-link" href="home">Home</a>
+            <a class="nav-item nav-link active" href="upload">Upload Images <span class="sr-only">(current)</span></a>
         </div>
     </div>
 </nav>
@@ -48,89 +47,98 @@
         <h1>Community Image Gallery</h1>
         <p>This is a place for you to share you favorite music related images and have them displayed in this gallery!</p>
         <form enctype="multipart/form-data" id="uploadImage" action="uploadImage" method="post">
-            <label for="image">Upload: </label><input type="file" name="image" id="image" accept="image/*" th:onchange="submit()">
+            <div class="mb-3">
+                <label for="imageTitle" class="form-label">Title</label>
+                <input type="text" name="imageTitle" class="form-control" id="imageTitle">
+            </div>
+            <div class="mb-3">
+                <label for="imageLink" class="form-label">Link to Image</label>
+                <input type="text" name="imageLink" class="form-control" id="imageLink">
+            </div>
+            <button type="submit" class="btn btn-dark">Submit</button>
         </form>
     </div>
 </section>
 <div class="image-gallery py-5 bg-light">
     <div class="container">
-        <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
+        <div id="images" class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
+
             <div class="col">
                 <div class="card shadow-sm">
-                    <img src="https://images.complex.com/complex/images/c_crop,h_1079,w_1853,x_0,y_0/c_fill,dpr_auto,f_auto,q_auto,w_1400/fl_lossy,pg_1/epdpgf8hzri7xbkcr3pr/lil-uzi-vert-playboi-carti-getty-bennett-raglin2?fimg-ssr-default" class="card-img-top" width="100%" height="225" preserveAspectRatio="xMidYMid slice" focusable="false">
+                    <img src="https://image-cdn.hypb.st/https%3A%2F%2Fhypebeast.com%2Fimage%2F2019%2F04%2Ftame-impala-asap-rocky-perform-at-coachella-0.jpg?w=960&cbr=1&q=90&fit=max" class="card-img-top" width="100%" height="225" preserveAspectRatio="xMidYMid slice" focusable="false">
 
                     <div class="card-body">
-                        <p class="card-text">Plaiboiy catri & litgle uzzi</p>
+                        <p class="card-text">asap rocky coachella</p>
                         <div class="d-flex justify-content-between align-items-center">
                             <div class="btn-group">
                                 <button disabled type="button" class="btn btn-sm btn-secondary">Delete</button>
-                                <button type="button" class="btn btn-sm btn-outline-secondary">Info</button>
+                                <button disabled type="button" class="btn btn-sm btn-secondary">Info</button>
                             </div>
-                            <small class="text-muted">playboicarti</small>
+                            <small class="text-muted">asap-rocky-coachella.jpg</small>
                         </div>
                     </div>
                 </div>
             </div>
             <div class="col">
                 <div class="card shadow-sm">
-                    <img src="https://www.the-sun.com/wp-content/uploads/sites/6/2022/02/SC-Yeat-Comp-copy-2.jpg" class="card-img-top" width="100%" height="225" preserveAspectRatio="xMidYMid slice" focusable="false">
+                    <img src="https://pbs.twimg.com/media/FOF7ydCVsAI4-JV.jpg" class="card-img-top" width="100%" height="225" preserveAspectRatio="xMidYMid slice" focusable="false">
 
                     <div class="card-body">
-                        <p class="card-text">Yeast</p>
+                        <p class="card-text">yeat uzi</p>
                         <div class="d-flex justify-content-between align-items-center">
                             <div class="btn-group">
                                 <button disabled type="button" class="btn btn-sm btn-secondary">Delete</button>
-                                <button type="button" class="btn btn-sm btn-outline-secondary">Info</button>
+                                <button disabled type="button" class="btn btn-sm btn-secondary">Info</button>
                             </div>
-                            <small class="text-muted">playboicarti</small>
+                            <small class="text-muted">yeat_uzi.jpg</small>
                         </div>
                     </div>
                 </div>
             </div>
             <div class="col">
                 <div class="card shadow-sm">
-                    <img src="https://i.guim.co.uk/img/media/0276bb34642296fe1191813620398186cb1abe10/0_413_2667_1600/master/2667.jpg?width=1200&height=1200&quality=85&auto=format&fit=crop&s=9597170601ff3d53d31477253f237b19" class="card-img-top" width="100%" height="225" preserveAspectRatio="xMidYMid slice" focusable="false">
+                    <img src="https://static.independent.co.uk/s3fs-public/thumbnails/image/2019/02/05/08/21-savage.jpg?width=1200" class="card-img-top" width="100%" height="225" preserveAspectRatio="xMidYMid slice" focusable="false">
 
                     <div class="card-body">
-                        <p class="card-text">Shéyaa Bin Abraham-Joseph</p>
+                        <p class="card-text">sheyaa bin abraham-joseph</p>
                         <div class="d-flex justify-content-between align-items-center">
                             <div class="btn-group">
                                 <button disabled type="button" class="btn btn-sm btn-secondary">Delete</button>
-                                <button type="button" class="btn btn-sm btn-outline-secondary">Info</button>
+                                <button disabled type="button" class="btn btn-sm btn-secondary">Info</button>
                             </div>
-                            <small class="text-muted">playboicarti</small>
+                            <small class="text-muted">sheyaa_bin_abraham-joseph.jpg</small>
                         </div>
                     </div>
                 </div>
             </div>
             <div class="col">
                 <div class="card shadow-sm">
-                    <img src="https://i1.sndcdn.com/artworks-EUrZswbnzm6Se8SY-1Ftqug-t500x500.jpg" class="card-img-top" width="100%" height="225" preserveAspectRatio="xMidYMid slice" focusable="false">
+                    <img src="https://lastfm.freetls.fastly.net/i/u/ar0/486ab28c1f6a78fa396d6c86e52b5d22" class="card-img-top" width="100%" height="225" preserveAspectRatio="xMidYMid slice" focusable="false">
 
                     <div class="card-body">
-                        <p class="card-text">OMG YEAP TREAK</p>
+                        <p class="card-text">yeat kankan twizzy</p>
                         <div class="d-flex justify-content-between align-items-center">
                             <div class="btn-group">
                                 <button disabled type="button" class="btn btn-sm btn-secondary">Delete</button>
-                                <button type="button" class="btn btn-sm btn-outline-secondary">Info</button>
+                                <button disabled type="button" class="btn btn-sm btn-secondary">Info</button>
                             </div>
-                            <small class="text-muted">playboicarti</small>
+                            <small class="text-muted">yeat_kankan_twizzy.jpg</small>
                         </div>
                     </div>
                 </div>
             </div>
             <div class="col">
                 <div class="card shadow-sm">
-                    <img src="https://thefader-res.cloudinary.com/private_images/w_760,c_limit,f_auto,q_auto:best/GettyImages-1363237965_ljib1t/gunna-photo-by-alberto-e-rodriguez-getty-images-for-ds4ever-presented-by-gunna-young-stoner-life-records-300-entertainment.jpg" class="card-img-top" width="100%" height="225" preserveAspectRatio="xMidYMid slice" focusable="false">
+                    <img src="https://townsquare.media/site/812/files/2021/02/future1.jpg?w=1200" class="card-img-top" width="100%" height="225" preserveAspectRatio="xMidYMid slice" focusable="false">
 
                     <div class="card-body">
-                        <p class="card-text">Guner (mcdonald ad)</p>
+                        <p class="card-text">the streets</p>
                         <div class="d-flex justify-content-between align-items-center">
                             <div class="btn-group">
                                 <button disabled type="button" class="btn btn-sm btn-secondary">Delete</button>
-                                <button type="button" class="btn btn-sm btn-outline-secondary">Info</button>
+                                <button disabled type="button" class="btn btn-sm btn-secondary">Info</button>
                             </div>
-                            <small class="text-muted">playboicarti</small>
+                            <small class="text-muted">the_streets.jpg</small>
                         </div>
                     </div>
                 </div>
@@ -138,7 +146,9 @@
         </div>
     </div>
 </div>
-
+<form style="display:none;" id="deleteImage" action="deleteImage" method="post">
+    <input type="text" name="imageId" id="imageId">
+</form>
 <!-- FOOTER -->
 <footer class="blog-footer">
     <p>Website built by Noé Widmer and Dean Roth</p>
@@ -146,5 +156,66 @@
         <a href="home">Back to home</a>
     </p>
 </footer>
+<script th:inline="javascript">
+    /*<![CDATA[*/
+
+    function deleteImages(value) {
+        document.getElementById("imageId").value = value;
+        document.getElementById("deleteImage").submit();
+    }
+
+    function populateImages() {
+        // FOR EACH WITH IMAGES
+        /*[# th:each="image : ${images}"]*/
+            var buttonDel = document.createElement("button");
+            buttonDel.innerHTML = "Delete";
+            buttonDel.classList.add("btn", "btn-sm", "btn-secondary");
+            buttonDel.value = /*[[${image.id}]]*/;
+            buttonDel.setAttribute("onclick", "deleteImages(this.value);");
+            var buttonInf = document.createElement("button");
+            buttonInf.innerHTML = "Info";
+            buttonInf.classList.add("btn", "btn-sm", "btn-secondary");
+            var buttonGroup = document.createElement("div")
+            buttonGroup.classList.add("btn-group");
+            buttonGroup.appendChild(buttonDel);
+            buttonGroup.appendChild(buttonInf);
+            var fileName = document.createElement("small");
+            var shortLink = /*[[${image.link}]]*/;
+            shortLink = shortLink.slice(8, 23);
+            fileName.innerHTML = shortLink;
+            fileName.classList.add("text-muted");
+            var content = document.createElement("div");
+            content.classList.add("d-flex", "justify-content-between", "align-items-center");
+            content.appendChild(buttonGroup);
+            content.appendChild(fileName);
+            var fileTitle = document.createElement("p");
+            fileTitle.innerHTML = /*[[${image.name}]]*/;
+            fileTitle.classList.add("card-text");
+            var cardBody = document.createElement("div");
+            cardBody.classList.add("card-body");
+            cardBody.appendChild(fileTitle);
+            cardBody.appendChild(content);
+            var image = document.createElement("img");
+            image.classList.add("card-img-top");
+            var src = /*[[${image.link}]]*/;
+            image.setAttribute("width", "100%");
+            image.setAttribute("height", "225");
+            image.setAttribute("preserveAspectRatio", "xMidYMid slice");
+            image.setAttribute("focusable", "false");
+            image.setAttribute("src", src);
+            var card = document.createElement("div");
+            card.classList.add("card", "shadow-sm");
+            card.appendChild(image);
+            card.appendChild(cardBody);
+            var col = document.createElement("div");
+            col.classList.add("col");
+            col.appendChild(card);
+            var gallery = document.getElementById("images");
+            gallery.prepend(col);
+        /*[/]*/
+    }
+
+    /*]]>*/
+</script>
 </body>
 </html>

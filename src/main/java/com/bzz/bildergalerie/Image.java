@@ -1,9 +1,6 @@
 package com.bzz.bildergalerie;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import javax.persistence.*;
 
 @Entity
 @Table(name = "images")
@@ -16,16 +13,16 @@ public class Image {
     @Column(name = "name")
     private String name;
 
-    @Column(name = "picture")
-    private byte[] picture;
+    @Column(name = "link")
+    private String link;
 
     /* CONSTRUCTORS */
     public Image() {}
 
-    public Image(int id, String name, byte[] picture) {
+    public Image(int id, String name, String link) {
         this.id = id;
         this.name = name;
-        this.picture = picture;
+        this.link = link;
     }
 
     /* GETTERS & SETTERS */
@@ -45,11 +42,11 @@ public class Image {
         this.name = name;
     }
 
-    public byte[] getPicture() {
-        return picture;
+    public String getLink() {
+        return link;
     }
 
-    public void setPicture(byte[] picture) {
-        this.picture = picture;
+    public void setLink(String link) {
+        this.link = link;
     }
 }

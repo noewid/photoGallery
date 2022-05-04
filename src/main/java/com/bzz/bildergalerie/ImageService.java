@@ -17,14 +17,5 @@ public class ImageService {
     @Autowired
     private ImageRepository repository;
 
-    public void uploadImage(MultipartFile image) {
 
-        //Image newImage = new Image((int) repository.count() + 1, image.getOriginalFilename(), Base64.getEncoder().encodeToString(image.getBytes()));
-        try {
-            Image newImage = new Image((int) repository.count() + 1, image.getOriginalFilename(), image.getBytes());
-            repository.save(newImage);
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-    }
 }
